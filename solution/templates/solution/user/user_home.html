@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        function showemployee()
+        {
+            var e=document.getElementById("selectemp")
+            e.style.display="block"
+        }
+        function hidedetails()
+        {
+        document.getElementById("selectemp").style.display="none"
+        }
+    </script>
+    {%include 'solution/common/commoncss.html'%}
+    
+</head>
+<body background="{%static 'solution/images/bg3.jpg'%}" style="background-size: cover;">
+
+    {%include 'solution/user/user_header.html'%}
+    
+    {%if messages%}
+        {%for m in messages%}
+        <!-- <h2>{{m}}</h2> -->
+        <div class=" alert alert-success alert-dismissible fade show text-center" role="alert" 0 style="width:50%; margin-left: 400px;" >
+            <strong>{{m}}</strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {%endfor%}
+        {%endif%}
+    <div class="card" style="width: 40%;height: auto;background-color:burlywood;position: relative;margin-left: 450px;margin-top: 130px;">
+        <h2 style="text-align: center;color: darkslategray;">Your Profile Details</h2>
+    <div class="card-body">
+        <p class="card-text">Name : {{user_data.name}}</p>
+        <p class="card-text">Email : {{user_data.email}}</p>
+        <p class="card-text">Phone : {{user_data.phone}}</p>
+        <p class="card-text">Address : {{user_data.address}}</p>
+        <button type="button" class="btn btn-light" onclick="showemployee()">Search Employee</button>
+        <div class="mb-3 mt-3" style="display: none;" id="selectemp">
+       
+            <form method="POST" action="/user_home/" class="needs-validation" novalidate>
+            {%csrf_token%}
+            <select class="form-select" aria-label="Select" name="selectemp" required>
+                <option selected disabled value="">Employee Type</option>
+                <option value="1">Maid</option>
+                <option value="2">Gardener</option>
+                <option value="3">Laundary Man</option>
+                <option value="4">Nanny</option>
+                <option value="5">Caretaker</option>
+                <option value="6">Cook</option>
+                <option value="7">Sweeper</option>
+                <option value="8">Dishwasher</option>
+                <option value="9">Ironer</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a name.
+            </div>
+            <div class="text-center" style="margin-top: 10px;"><button type="submit" class="btn btn-success">Submit</button></div>
+        </form>
+        <button type="button" class="btn btn-light" onclick="hidedetails()">Hide Details</button>
+</div>
+    </div>   
+    </div>
+
+    <script src="{%static 'solution/js/validation.js'%}"></script>  
+    
+    {%include 'solution/common/commonjs.html'%}
+</body>
+</html>

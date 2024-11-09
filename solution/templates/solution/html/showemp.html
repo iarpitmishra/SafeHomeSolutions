@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Employee</title>
+    {%include 'solution/common/commoncss.html'%}
+</head>
+<body background="{%static 'solution/images/wwe2.jpg'%}">
+    {%include 'solution/common/commonheader.html'%}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {%for e in emp_data%}
+    
+        <div class="col">
+          <div class="card h-100">
+            <img src="/media/{{e.employee_pic}}" class="card-img-top"
+        alt="Employee pic" style="width: 100%;height:400px;" />
+            <div class="card-body">
+              <h5 class="card-title">{{e.name}}</a></h5>
+              <p class="card-text"><span style="font-weight: bolder;">EMAIL : </span>{{e.email}}</p>
+              <p class="card-text"><span style="font-weight: bolder;">AGE : </span>{{e.age}}</p>
+              <p class="card-text"><span style="font-weight: bolder;">GENDER : </span>{{e.gender}}</p>
+              <p class="card-text"><span style="font-weight: bolder;">EXPERIENCE : </span>{{e.experience}}</p>
+              <p class="card-text"><span style="font-weight: bolder;">ABOUT : </span>{{e.about_employee}}</p>
+            </div>
+          </div>
+        </div>
+     {%endfor%}   
+     </div>
+     {%include 'solution/common/commonfooter.html'%}
+    {%include 'solution/common/commonjs.html'%}
+</body>
+</html>

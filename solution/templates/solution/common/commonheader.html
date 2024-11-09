@@ -1,0 +1,68 @@
+{%load static%}
+<style>
+    .nav-link{
+      color:black;
+      font-size: 15px;
+      font-family: arial;
+    }
+    .dropdown-item{
+      color:black;
+      font-size: 15px;
+      font-family: arial;
+    }
+    a:hover{
+      color:white !important;
+    }
+    .navbar-brand{
+      color:black;
+      font-size: 15px;
+      font-family: arial;
+    }
+  
+   
+  
+  </style>
+  
+  
+  <nav class="navbar navbar-expand-lg" style="background-color:burlywood;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><p style="font-weight: bolder;font-family: cursive;">SAFE HOME SOLUTIONS</p></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{'/'}}"><i class='fas fa-home'></i></a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="{{'/about/'}}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{'/contact/'}}">Contact Us</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="{{'/ouremployee/'}}">OurEmployee</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{'/feedback/'}}">Feedback</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{'/query/'}}">Query</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{'/login/'}}">Login</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Register
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{'/registration/'}}">User</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>

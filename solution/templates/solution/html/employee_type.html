@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Employee</title>
+    {%include 'solution/common/commoncss.html'%}
+</head>
+<body background="{%static 'solution/images/wwe2.jpg'%}">
+    {%include 'solution/common/commonheader.html'%}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {%for e in emp_data%}
+    
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><a href="/showemp/{{e.employee_type}}">{{e.employee_type}}</a></h5>
+              <p class="card-text"><span style="font-weight: bolder;">CHARGE : </span>{{e.charge_permonth}}</p>
+              <p class="card-text"><span style="font-weight: bolder;">ABOUT : </span>{{e.other_details}}</p>
+            </div>
+          </div>
+        </div>
+     {%endfor%}
+     </div>   
+     {%include 'solution/common/commonfooter.html'%}
+    {%include 'solution/common/commonjs.html'%}
+</body>
+</html>

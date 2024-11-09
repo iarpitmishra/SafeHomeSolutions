@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    {%include 'solution/common/commoncss.html'%}
+</head>
+<body background="{%static 'solution/images/bg3.jpg'%}" style="background-size: cover;">
+    {%include 'solution/user/user_header.html'%}
+    
+    <form method="POST" action="/user_edit_profile/">
+        {%csrf_token%}
+    <div class="card" style="width: 40%;height: auto;background-color:burlywood;position: relative;margin-left: 450px;margin-top: 100px;">
+        <h2 style="text-align: center;color: darkslategray;">Your Profile Details</h2>
+    <div class="card-body">
+        <p class="card-text">User ID : {{user_data.id}}</p>
+        <p class="card-text">Name : {{user_data.name}}</p>
+        <p class="card-text">Phone : <input type="text" name="userphone" class="form-control" required value="{{user_data.phone}}"></p>
+        <p class="card-text">Address :<textarea name="useraddress" class="form-control" required >{{user_data.address}}</textarea></p>
+        <p class="card-text">Email : <input type="email" name="useremail" class="form-control" required value="{{user_data.email}}"></p>
+        <div class="text-center"><button class="btn btn-success">Edit Profile</button>
+    </div>   
+    </div>
+    </form>
+    {%include 'solution/common/commonfooter.html'%}
+    {%include 'solution/common/commonjs.html'%}
+</body>
+</html>

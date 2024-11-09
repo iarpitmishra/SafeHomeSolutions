@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHomeSolutions</title> 
+    {%include 'solution/common/commoncss.html'%}
+    
+    
+</head>
+<body background="{%static 'solution/images/wwe2.jpg'%}">
+    {%include 'solution/common/commonheader.html'%}
+
+    <div class="text-center" style="margin-top: 10px; margin-bottom: 10px;background-color: whitesmoke;height: 70px;">
+        <h2 style="line-height: 60px;">
+            We Are <span style="color: cornflowerblue;">India's</span> Most Trusted <span style="color:gold;">Home Makers</span> 
+        </h2>
+        </div>
+<div>
+    <h4 class="text-center"><span style="color: cornflowerblue;">OUR FEATURED SERVICES</span></h4> 
+    <h3 class="text-center"style="line-height:20px">
+        Hire professionals,</h3>
+        <h3 class="text-center"style="line-height:20px">Experienced specifically for your needs</h3>
+        <p class="text-center"style="line-height:50px">
+Safe Home Solutions offers completely certified workers with an complimentary replacement policy
+        </p></div>
+
+
+        <marquee behavior="alternate" scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()" style="background-color:lightblue;">
+          {%for o in offer_key%}
+         
+          <span style="color:black;font-size: medium;font-family: arial;">{{o.offercontents}} : {{o.date}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          {%endfor%}
+      </marquee>
+
+
+        <div class="card border-secondary" style="width: 22rem;float: left;margin-left: 20px;">
+            <img src="{%static 'solution/images/maid.jpg'%}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text text-center" style="font-family: arial;font-weight: bolder;">MAID</p>
+            </div>
+          </div>
+
+<div class="card border-secondary" style="width: 22rem;float: left;margin-left: 20px;">
+    <img src="{%static 'solution/images/gardener.jpg'%}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text text-center" style="font-family: arial;font-weight: bolder;">GARDENER</p>
+    </div>
+  </div>
+
+  <div class="card border-secondary" style="width: 22rem;float: left;margin-left: 20px;margin-right: 20px;">
+    <img src="{%static 'solution/images/cook.jpg'%}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text text-center" style="font-family: arial;font-weight: bolder;">COOK</p>
+    </div>
+  </div>
+
+  <div class="card border-secondary" style="width: 22rem;margin-left: 20px;">
+    <img src="{%static 'solution/images/nanny.jpg'%}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text text-center" style="font-family: arial;font-weight: bolder;">NANNY</p>
+    </div>
+  </div>
+
+
+
+  
+  
+
+  {%include 'solution/common/commonfooter.html'%}
+    {%include 'solution/common/commonjs.html'%}
+</body>
+</html>

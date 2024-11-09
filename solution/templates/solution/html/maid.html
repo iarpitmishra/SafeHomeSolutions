@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardener</title>
+    {%include 'solution/common/commoncss.html'%}
+</head>
+<body background="{%static 'solution/images/maidbg.jpg'%}" style="background-size: cover;">
+    {%include 'solution/user/user_header.html'%}
+    <h1 class="mt-3" style="text-align: center;color:white;font-weight: bolder;font-family: arial;" > Maid Details </h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {%for m in context2.m_key%}
+        
+            <div class="col">
+              <div class="card h-100">
+                <img src="/media/{{m.employee_pic}}" class="card-img-top"
+                  alt="Hollywood Sign on The Hill" style="width: 100%;height:400px;"/>
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center;">{{m.name}}</h5>
+                  <p class="card-text" style="text-align: center;"><span>EXPERIENCE: </span>{{m.experience}}</p>
+                  <p class="card-text">
+                    {{m.about_employee}}
+                  </p>
+                </div>
+              </div>
+            </div> 
+                {%endfor%}
+    
+             </div>
+             {%include 'solution/common/commonfooter.html'%}
+    {%include 'solution/common/commonjs.html'%}
+</body>
+</html>
